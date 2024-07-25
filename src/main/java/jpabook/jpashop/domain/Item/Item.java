@@ -1,9 +1,11 @@
 package jpabook.jpashop.domain.Item;
 
 import jakarta.persistence.*;
-import jpabook.jpashop.domain.Categories;
+import jpabook.jpashop.domain.Category;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Getter @Setter
@@ -19,6 +21,7 @@ public abstract class Item {
     private int price;
     private int stockQuantity;
 
-    private Categories categories;
+    @ManyToMany(mappedBy = "items")
+    private List<Category> category;
 
 }

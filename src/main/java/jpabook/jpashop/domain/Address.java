@@ -11,4 +11,13 @@ public class Address {
     private String street;
     private String zipcode;
 
+    //생성자 생성 방지
+    protected Address() {
+    }
+
+    public Address(String city, String street, String zipcode) {
+        this.city = city;
+        this.street = street;
+        this.zipcode = zipcode;
+    }
 }
